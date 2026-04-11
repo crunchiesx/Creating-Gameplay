@@ -6496,6 +6496,7 @@ GameObject:
   - component: {fileID: 1256794418009769982}
   - component: {fileID: 1256794418009769980}
   - component: {fileID: 1256794418009769856}
+  - component: {fileID: 1256794418009769983}
   m_Layer: 0
   m_Name: Asteroid_01
   m_TagString: Untagged
@@ -6562,6 +6563,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1256794418009769983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256794418009769981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b250eb8c56629ef48a8bc2ae999c6bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InfiniteBounds
 --- !u!212 &1901813817424666641
 SpriteRenderer:
   serializedVersion: 2
@@ -6730,6 +6743,7 @@ GameObject:
   - component: {fileID: 3579586416744495174}
   - component: {fileID: 3579586416744495172}
   - component: {fileID: 3579586416744495160}
+  - component: {fileID: 3579586416744495175}
   m_Layer: 0
   m_Name: Asteroid_02
   m_TagString: Untagged
@@ -6796,6 +6810,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &3579586416744495175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3579586416744495173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b250eb8c56629ef48a8bc2ae999c6bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InfiniteBounds
 --- !u!1 &5946969973895679888
 GameObject:
   m_ObjectHideFlags: 0
@@ -7099,6 +7125,7 @@ GameObject:
   - component: {fileID: 5946969974589823502}
   - component: {fileID: 5946969974589823497}
   - component: {fileID: 5946969974589823503}
+  - component: {fileID: 5946969974589823504}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7138,6 +7165,18 @@ MonoBehaviour:
   fireSprite: {fileID: 5946969973996822012}
   moveSpeed: 5
   turnSpeed: 3
+--- !u!114 &5946969974589823504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5946969974589823500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b250eb8c56629ef48a8bc2ae999c6bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InfiniteBounds
 --- !u!212 &7737510623136593068
 SpriteRenderer:
   serializedVersion: 2
@@ -7236,6 +7275,7 @@ GameObject:
   - component: {fileID: 7737510623136593068}
   - component: {fileID: 7737510623136593070}
   - component: {fileID: 7737510623136593106}
+  - component: {fileID: 7737510623136593108}
   m_Layer: 0
   m_Name: Asteroid_03
   m_TagString: Untagged
@@ -7314,6 +7354,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7737510623136593108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7737510623136593071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b250eb8c56629ef48a8bc2ae999c6bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InfiniteBounds
 --- !u!4 &8463829624774344567
 Transform:
   m_ObjectHideFlags: 0
