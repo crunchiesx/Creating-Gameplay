@@ -6448,6 +6448,7 @@ GameObject:
   - component: {fileID: 1256794418009769980}
   - component: {fileID: 1256794418009769856}
   - component: {fileID: 1256794418009769983}
+  - component: {fileID: 1256794418009769984}
   m_Layer: 0
   m_Name: Asteroid_01
   m_TagString: Untagged
@@ -6526,6 +6527,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b250eb8c56629ef48a8bc2ae999c6bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InfiniteBounds
+--- !u!114 &1256794418009769984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256794418009769981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76584dc1de720db4a979d6cb57dd9021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damageable
 --- !u!212 &1901813817424666641
 SpriteRenderer:
   serializedVersion: 2
@@ -6695,6 +6708,7 @@ GameObject:
   - component: {fileID: 3579586416744495172}
   - component: {fileID: 3579586416744495160}
   - component: {fileID: 3579586416744495175}
+  - component: {fileID: 3579586416744495176}
   m_Layer: 0
   m_Name: Asteroid_02
   m_TagString: Untagged
@@ -6773,6 +6787,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b250eb8c56629ef48a8bc2ae999c6bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InfiniteBounds
+--- !u!114 &3579586416744495176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3579586416744495173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76584dc1de720db4a979d6cb57dd9021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damageable
 --- !u!1 &5946969973895679888
 GameObject:
   m_ObjectHideFlags: 0
@@ -7227,6 +7253,7 @@ GameObject:
   - component: {fileID: 7737510623136593070}
   - component: {fileID: 7737510623136593106}
   - component: {fileID: 7737510623136593108}
+  - component: {fileID: 7737510623136593109}
   m_Layer: 0
   m_Name: Asteroid_03
   m_TagString: Untagged
@@ -7317,6 +7344,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b250eb8c56629ef48a8bc2ae999c6bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InfiniteBounds
+--- !u!114 &7737510623136593109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7737510623136593071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76584dc1de720db4a979d6cb57dd9021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damageable
 --- !u!4 &8463829624774344567
 Transform:
   m_ObjectHideFlags: 0
