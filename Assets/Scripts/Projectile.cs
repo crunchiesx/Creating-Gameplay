@@ -43,7 +43,10 @@ public class Projectile : MonoBehaviour
                 {
                     if (damageable.Damage(damage))
                     {
-
+                        if (hitColliders[i].TryGetComponent(out Asteroid asteroid))
+                        {
+                            GameManager.Instance.UpdateScore(asteroid.pointsValue, playerNumber);
+                        }
                     }
 
                     AudioManager.Instance.PlaySFX(hitClip);

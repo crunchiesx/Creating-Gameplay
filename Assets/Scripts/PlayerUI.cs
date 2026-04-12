@@ -34,6 +34,6 @@ public class PlayerUI : MonoBehaviour
 
     public void UpdateScore(int score)
     {
-        scoreDisplay.text = score.ToString();
+        scoreDisplay.text = string.Format("{0:000000}", score);
     }
 }
