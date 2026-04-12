@@ -6708,6 +6708,8 @@ GameObject:
   - component: {fileID: 5946969974589823497}
   - component: {fileID: 5946969974589823503}
   - component: {fileID: 5946969974589823504}
+  - component: {fileID: 5946969974589823506}
+  - component: {fileID: 5946969974589823505}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -6759,6 +6761,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b250eb8c56629ef48a8bc2ae999c6bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InfiniteBounds
+--- !u!114 &5946969974589823505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5946969974589823500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76584dc1de720db4a979d6cb57dd9021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damageable
+  health: 100
+--- !u!114 &5946969974589823506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5946969974589823500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb8478034726d74c9c7c3503cb52a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
