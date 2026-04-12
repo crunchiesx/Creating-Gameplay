@@ -5,8 +5,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    [Header("Object Pools")]
     public ObjectPool explosionPool;
     public ObjectPool[] asteroidPools;
+    public ObjectPool[] projectilePools;
 
     private bool gameOver = false;
 
