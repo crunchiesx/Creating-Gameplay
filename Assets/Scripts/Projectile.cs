@@ -59,4 +59,9 @@ public class Projectile : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    private void OnDisable()
+    {
+        timer = 0f;
+    }
 }

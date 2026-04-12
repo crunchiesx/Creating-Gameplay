@@ -56,10 +56,4 @@ public class InfiniteBounds : MonoBehaviour
             objectRb.position = newPosition;
         }
     }
-
-    private void OnDisable()
-    {
-        objectRb = null;
-        mainCamera = null;
-    }
 }
