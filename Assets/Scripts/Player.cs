@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
             if (damageable.Damage(200))
             {
                 lives--;
+                GameManager.Instance.ReportPlayerDeath(gameObject, PlayerNumber, lives);
             }
         }
     }

@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public ObjectPool[] asteroidPools;
     public ObjectPool[] projectilePools;
 
+    [Header("Settings")]
+    [SerializeField] private float reSpawnDuration = 2f;
+
     private bool gameOver = false;
 
     private void Awake()
@@ -37,5 +40,32 @@ public class GameManager : MonoBehaviour
         int poolIndex = Random.Range(0, asteroidPools.Length);
         GameObject asteroid = asteroidPools[poolIndex].GetObject();
         asteroid.SetActive(true);
+    }
+
+    public void ReportPlayerDeath(GameObject player, int playerNumber, int lives)
+    {
+        if (lives > 0)
+        {
+            StartCoroutine(ReEnablePlayer(player));
+            return;
+        }
+
+        if (lives <= 0)
+        {
+            Player.totalPlayers--;
+            if (Player.totalPlayers <= 0)
+            {
+                gameOver = true;
+                Debug.Log("Game Over!");
+            }
+        }
+    }
+
+    private IEnumerator ReEnablePlayer(GameObject player)
+    {
+        yield return new WaitForSeconds(reSpawnDuration);
+        player.transform.position = Vector3.zero;
+        player.transform.rotation = Quaternion.identity;
+        player.SetActive(true);
     }
 }
