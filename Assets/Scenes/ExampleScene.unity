@@ -903,7 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7cc64e74ab41846bf3c0d0ba8eca38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
-  pooledObjectPrefab: {fileID: 1415072511862494658, guid: c085b7934e3651345a0dbfea690c927e, type: 3}
+  pooledObjectPrefab: {fileID: 8268387944441173749, guid: c085b7934e3651345a0dbfea690c927e, type: 3}
   poolSize: 5
 --- !u!114 &825653801
 MonoBehaviour:
@@ -917,7 +917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7cc64e74ab41846bf3c0d0ba8eca38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
-  pooledObjectPrefab: {fileID: 1399666534472919167, guid: 2e0b840802e4e464e8a7efe35c01f4a4, type: 3}
+  pooledObjectPrefab: {fileID: 5358379480721957872, guid: 2e0b840802e4e464e8a7efe35c01f4a4, type: 3}
   poolSize: 5
 --- !u!114 &825653802
 MonoBehaviour:
@@ -1307,7 +1307,7 @@ MonoBehaviour:
   - {fileID: 192942945}
   reSpawnDuration: 2
   positionOffset: 3
-  twoPlayerMode: 1
+  twoPlayerMode: 0
   playerColors:
   - {r: 0.7924528, g: 0.16073336, b: 0.16073336, a: 1}
   - {r: 0.14773929, g: 0.13995194, b: 0.8018868, a: 1}

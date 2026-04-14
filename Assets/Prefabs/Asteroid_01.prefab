@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 1719051927876611176}
   - component: {fileID: 7259379203313064482}
   - component: {fileID: 2461029086392469162}
-  - component: {fileID: 3102301551013420507}
+  - component: {fileID: 7288466132540505505}
+  - component: {fileID: 4386771461444839023}
+  - component: {fileID: -3184540213578343486}
   m_Layer: 0
   m_Name: Asteroid_01
   m_TagString: Asteroid
@@ -202,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damageable
   health: 100
---- !u!114 &3102301551013420507
+--- !u!114 &7288466132540505505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,7 +213,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 4849768302514634629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bcba5ea304796e43b85f72a19bb9de8, type: 3}
+  m_Script: {fileID: 11500000, guid: 3001c530b3ea1674e93f1d1a32bb85a1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Asteroid
+  m_EditorClassIdentifier: Assembly-CSharp::RandomSize
+  minScale: 0.5
+  maxScale: 1.5
+--- !u!114 &4386771461444839023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4849768302514634629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e41b5b35d1850f4fa8c1148de1d3e35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Points
+  basePoints: 100
   pointsValue: 0
+--- !u!114 &-3184540213578343486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4849768302514634629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348f16ab48c23654f8c4193eec53c47d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloatingMovement

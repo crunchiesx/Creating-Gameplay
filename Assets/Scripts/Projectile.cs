@@ -43,9 +43,9 @@ public class Projectile : MonoBehaviour
                 {
                     if (damageable.Damage(damage))
                     {
-                        if (hitColliders[i].TryGetComponent(out Asteroid asteroid))
+                        if (hitColliders[i].TryGetComponent(out Points points))
                         {
-                            GameManager.Instance.UpdateScore(asteroid.pointsValue, playerNumber);
+                            GameManager.Instance.UpdateScore(points.pointsValue, playerNumber);
                         }
                     }
 
