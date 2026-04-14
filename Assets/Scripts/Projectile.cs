@@ -49,6 +49,7 @@ public class Projectile : MonoBehaviour
                         }
                     }
 
+                    ExplosionManager.GenerateExplosion(transform.position, transform.localScale.x / 2f);
                     AudioManager.Instance.PlaySFX(hitClip);
                     gameObject.SetActive(false);
                     break;

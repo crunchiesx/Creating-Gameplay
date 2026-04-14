@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76584dc1de720db4a979d6cb57dd9021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damageable
+  explosionSFX: {fileID: 8300000, guid: 157117dc1677f43c88759527f3e2e7ed, type: 3}
   health: 100
 --- !u!114 &7288466132540505505
 MonoBehaviour:

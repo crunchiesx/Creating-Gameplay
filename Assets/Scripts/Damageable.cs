@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private AudioClip explosionSFX;
+
+    [Header("Settings")]
     [SerializeField] private float health = 100;
 
     private void OnEnable()
@@ -19,10 +23,8 @@ public class Damageable : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            GameObject explosion = GameManager.Instance.explosionPool.GetObject();
-            explosion.transform.position = transform.position;
-            explosion.transform.localScale = transform.localScale;
-            explosion.SetActive(true);
+            ExplosionManager.GenerateExplosion(transform.position, transform.localScale.x);
+            AudioManager.Instance.PlaySFX(explosionSFX);
             gameObject.SetActive(false);
             return true;
         }

@@ -11,7 +11,7 @@ public class ObjectPool : MonoBehaviour
 
     private int currentIndex = 0;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         for (int i = 0; i < poolSize; i++)
         {

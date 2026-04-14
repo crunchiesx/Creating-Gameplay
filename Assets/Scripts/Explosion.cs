@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private AudioClip explosionSFX;
-
     [Header("Settings")]
     [SerializeField] private AnimationCurve animationCurve = AnimationCurve.EaseInOut(0f, 1f, 1f, 0f);
 
@@ -20,9 +17,7 @@ public class Explosion : MonoBehaviour
 
     private IEnumerator ShrinkScale()
     {
-        AudioManager.Instance.PlaySFX(explosionSFX);
-
-        float startScale = 0.3f;
+        float startScale = transform.localScale.x;
         float scale;
         float timer = 0f;
 

@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerUI[] playerUI;
 
     [Header("Object Pools")]
-    public ObjectPool explosionPool;
     public ObjectPool[] asteroidPools;
     public ObjectPool[] projectilePools;
 

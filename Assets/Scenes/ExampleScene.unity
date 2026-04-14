@@ -242,9 +242,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 84205267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7cc64e74ab41846bf3c0d0ba8eca38, type: 3}
+  m_Script: {fileID: 11500000, guid: 47f43ed24e671eb4d86aef20b80479a6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
+  m_EditorClassIdentifier: Assembly-CSharp::ExplosionManager
   pooledObjectPrefab: {fileID: 3489203783282289274, guid: fa1bbffd7dd055b4b8e36b4bb89a9b38, type: 3}
   poolSize: 10
 --- !u!1 &192942943
@@ -1297,7 +1297,6 @@ MonoBehaviour:
   playerUI:
   - {fileID: 324344193}
   - {fileID: 638842500}
-  explosionPool: {fileID: 84205269}
   asteroidPools:
   - {fileID: 825653802}
   - {fileID: 825653801}
