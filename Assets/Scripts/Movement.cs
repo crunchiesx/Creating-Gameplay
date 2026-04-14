@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -10,6 +11,9 @@ public class Movement : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float turnSpeed = 10f;
+
+    [Header("Events")]
+    [SerializeField] private UnityEvent<float> OnThrust;
 
     private Rigidbody2D playerRb;
 
@@ -24,11 +28,7 @@ public class Movement : MonoBehaviour
     private void OnMove(InputValue value)
     {
         moveAxis = value.Get<float>() * moveSpeed;
-
-        if (fireSprite != null)
-        {
-            fireSprite.color = new Color(fireSprite.color.r, fireSprite.color.g, fireSprite.color.b, value.Get<float>());
-        }
+        OnThrust?.Invoke(value.Get<float>());
     }
 
     private void OnTurn(InputValue value)
@@ -48,10 +48,5 @@ public class Movement : MonoBehaviour
         turnAxis = 0f;
         playerRb.linearVelocity = Vector2.zero;
         playerRb.angularVelocity = 0f;
-
-        if (fireSprite != null)
-        {
-            fireSprite.color = new Color(fireSprite.color.r, fireSprite.color.g, fireSprite.color.b, 0f);
-        }
     }
 }

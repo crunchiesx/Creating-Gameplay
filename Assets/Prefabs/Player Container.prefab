@@ -82,6 +82,21 @@ MonoBehaviour:
   fireSprite: {fileID: 5747974192200953911}
   moveSpeed: 5
   turnSpeed: 3
+  OnThrust:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2707428401910444998}
+        m_TargetAssemblyTypeName: FadeSprite, Assembly-CSharp
+        m_MethodName: SetTransparencyTarget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5121582484176539878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7577434731282498933}
   - component: {fileID: 5747974192200953911}
+  - component: {fileID: 2707428401910444998}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -331,6 +347,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2707428401910444998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4560253857422037687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a395d1fb6cfee4cb43abcdd53d55d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeSprite
+  fadeSpeed: 5
+  autoOff: 1
 --- !u!1 &5106849411643052345
 GameObject:
   m_ObjectHideFlags: 0
