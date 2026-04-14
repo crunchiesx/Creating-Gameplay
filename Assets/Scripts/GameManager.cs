@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private GameObject playerObject;
+
+    [Space]
+
     [SerializeField] private GameObject[] winScreens;
     [SerializeField] private PlayerUI[] playerUI;
 
@@ -18,9 +21,11 @@ public class GameManager : MonoBehaviour
     public ObjectPool[] asteroidPools;
     public ObjectPool[] projectilePools;
 
-    [Header("Settings")]
+    [Header("Spawn Settings")]
     [SerializeField] private float reSpawnDuration = 2f;
     [SerializeField] private float positionOffset = 3f;
+
+    [Header("Game Settings")]
     [SerializeField] private bool twoPlayerMode = true;
 
     [Space]
