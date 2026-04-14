@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8274885543343141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7518399071152059086}
+  - component: {fileID: 6749778200138439111}
+  - component: {fileID: 942512971644490093}
+  m_Layer: 0
+  m_Name: Weapons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7518399071152059086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8274885543343141}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1780422893042811868}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6749778200138439111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8274885543343141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcc3e89a771b1b4fae782fe7ef883fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  currentWeaponIndex: 0
+  weaponList: []
+--- !u!114 &942512971644490093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8274885543343141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fb31f972145c884c9de9b62e8b68b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  weaponName: Double Shot
+  projectile: {fileID: 1878571715319737912, guid: a61d7b5c1b48c1240a4c73ee98cb3bbd, type: 3}
+  offset: 0.75
 --- !u!1 &1405043596523556622
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,7 +76,6 @@ GameObject:
   - component: {fileID: 5121582484176539878}
   - component: {fileID: 237420596587128726}
   - component: {fileID: 758376179475437835}
-  - component: {fileID: 2825348481689335646}
   - component: {fileID: 3543870945642628342}
   m_Layer: 0
   m_Name: Player
@@ -38,6 +99,7 @@ Transform:
   m_Children:
   - {fileID: 5572892002074026519}
   - {fileID: 1871747073335239396}
+  - {fileID: 7518399071152059086}
   m_Father: {fileID: 6430072687986057114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5144961555281831323
@@ -135,19 +197,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Damageable
   explosionSFX: {fileID: 8300000, guid: 157117dc1677f43c88759527f3e2e7ed, type: 3}
   health: 100
---- !u!114 &2825348481689335646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1405043596523556622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9639bda40d09610408cd8f63b2307353, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Weapon
-  offsetDistance: 0.75
 --- !u!114 &3543870945642628342
 MonoBehaviour:
   m_ObjectHideFlags: 0

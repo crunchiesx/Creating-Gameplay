@@ -19,7 +19,13 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    private GameObject CreateObject()
+    public void SetPool(GameObject poolObject, int numToCreate)
+    {
+        pooledObjectPrefab = poolObject;
+        poolSize = numToCreate;
+    }
+
+    protected virtual GameObject CreateObject()
     {
         GameObject newObj = Instantiate(pooledObjectPrefab, transform);
         createdObjects.Add(newObj);

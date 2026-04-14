@@ -1,22 +1,15 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Player))]
-public class Weapon : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] private float offsetDistance = 0.75f;
+    public string weaponName;
 
-    private int playerNumber;
+    protected Player player;
 
-    private void Awake()
+    protected virtual void Awake()
     {
-        playerNumber = GetComponent<Player>().PlayerNumber;
+        player = transform.root.GetComponentInChildren<Player>();
     }
 
-    private void OnFire()
-    {
-        GameObject projectile = GameManager.Instance.projectilePools[playerNumber].GetObject();
-        projectile.transform.position = transform.position + (transform.up * offsetDistance);
-        projectile.transform.rotation = transform.rotation;
-        projectile.SetActive(true);
-    }
+    public abstract void Fire(Transform origin);
 }

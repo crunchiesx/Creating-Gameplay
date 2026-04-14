@@ -17,8 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerUI[] playerUI;
 
     [Header("Object Pools")]
-    public ObjectPool[] asteroidPools;
-    public ObjectPool[] projectilePools;
+    [SerializeField] private ObjectPool[] asteroidPools;
 
     [Header("Spawn Settings")]
     [SerializeField] private float reSpawnDuration = 2f;

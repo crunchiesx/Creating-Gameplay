@@ -247,67 +247,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ExplosionManager
   pooledObjectPrefab: {fileID: 3489203783282289274, guid: fa1bbffd7dd055b4b8e36b4bb89a9b38, type: 3}
   poolSize: 10
---- !u!1 &192942943
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 192942944}
-  - component: {fileID: 192942946}
-  - component: {fileID: 192942945}
-  m_Layer: 0
-  m_Name: Projectile Pool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &192942944
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192942943}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1514473335}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &192942945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192942943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7cc64e74ab41846bf3c0d0ba8eca38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
-  pooledObjectPrefab: {fileID: 5576410807129834527, guid: 50dc7d6a45e3b174d89936bfe3a3ea9b, type: 3}
-  poolSize: 10
---- !u!114 &192942946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192942943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7cc64e74ab41846bf3c0d0ba8eca38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
-  pooledObjectPrefab: {fileID: 1878571715319737912, guid: a61d7b5c1b48c1240a4c73ee98cb3bbd, type: 3}
-  poolSize: 10
 --- !u!1 &324344191
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,7 +1169,6 @@ Transform:
   - {fileID: 669222779}
   - {fileID: 825653799}
   - {fileID: 84205268}
-  - {fileID: 192942944}
   - {fileID: 1215723797}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1302,8 +1240,8 @@ MonoBehaviour:
   - {fileID: 825653801}
   - {fileID: 825653800}
   projectilePools:
-  - {fileID: 192942946}
-  - {fileID: 192942945}
+  - {fileID: 0}
+  - {fileID: 0}
   reSpawnDuration: 2
   positionOffset: 3
   twoPlayerMode: 0
