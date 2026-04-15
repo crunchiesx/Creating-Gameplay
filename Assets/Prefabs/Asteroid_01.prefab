@@ -205,6 +205,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Damageable
   explosionSFX: {fileID: 8300000, guid: 157117dc1677f43c88759527f3e2e7ed, type: 3}
   health: 100
+  OnDestroyedByPlayer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4386771461444839023}
+        m_TargetAssemblyTypeName: Points, Assembly-CSharp
+        m_MethodName: ScorePoints
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7288466132540505505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Points
   basePoints: 100
-  pointsValue: 0
+  scalePointsBySize: 1
 --- !u!114 &-3184540213578343486
 MonoBehaviour:
   m_ObjectHideFlags: 0

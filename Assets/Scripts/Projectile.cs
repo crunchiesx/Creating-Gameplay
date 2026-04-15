@@ -41,13 +41,7 @@ public class Projectile : MonoBehaviour
             {
                 if (hitColliders[i].TryGetComponent(out Damageable damageable))
                 {
-                    if (damageable.Damage(damage))
-                    {
-                        if (hitColliders[i].TryGetComponent(out Points points))
-                        {
-                            GameManager.Instance.UpdateScore(points.pointsValue, playerNumber);
-                        }
-                    }
+                    damageable.Damage(damage, playerNumber);
 
                     ExplosionManager.GenerateExplosion(transform.position, transform.localScale.x / 2f);
                     AudioManager.Instance.PlaySFX(hitClip);

@@ -4,10 +4,16 @@ public class Points : MonoBehaviour
 {
     [SerializeField] private int basePoints = 100;
 
-    [HideInInspector] public int pointsValue;
+    [SerializeField] private bool scalePointsBySize = true;
 
-    private void OnEnable()
+    public void ScorePoints(int playerNumber)
     {
-        pointsValue = Mathf.RoundToInt(basePoints * transform.localScale.x);
+        int pointsValue = basePoints;
+        if (scalePointsBySize)
+        {
+            pointsValue = Mathf.RoundToInt(basePoints * transform.localScale.x);
+        }
+
+        GameManager.Instance.UpdateScore(pointsValue, playerNumber);
     }
 }

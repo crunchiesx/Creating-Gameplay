@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Damageable : MonoBehaviour
 {
@@ -8,9 +9,23 @@ public class Damageable : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float health = 100;
 
+    [Header("Events")]
+    [SerializeField] private UnityEvent<int> OnDestroyedByPlayer;
+
     private void OnEnable()
     {
         health = 100;
+    }
+
+    public bool Damage(float damage, int playerNumber)
+    {
+        if (Damage(damage))
+        {
+            OnDestroyedByPlayer?.Invoke(playerNumber);
+            return true;
+        }
+
+        return false;
     }
 
     public bool Damage(float damage)

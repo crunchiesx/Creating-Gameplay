@@ -10,9 +10,9 @@ public class WeaponController : MonoBehaviour
         weaponList = GetComponents<Weapon>();
     }
 
-    private void SelectWeapon(int index)
+    public void SelectWeapon(int index)
     {
-        index = Mathf.Clamp(index, 0, weaponList.Length - 1);
+        currentWeaponIndex = Mathf.Clamp(index, 0, weaponList.Length - 1);
     }
 
     private void OnFire()
