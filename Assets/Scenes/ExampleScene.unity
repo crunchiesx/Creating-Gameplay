@@ -263,7 +263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &324344192
 RectTransform:
   m_ObjectHideFlags: 0
@@ -297,8 +297,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9707efb699a14ad4cae2c9de2d34219b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerUI
-  livesDisplay: {fileID: 1930072110}
-  scoreDisplay: {fileID: 1598806470}
+  playerProfile: {fileID: 11400000, guid: 9f3377803edf0ca4db18300aabdbc6e5, type: 2}
+  livesDisplayText: {fileID: 1930072110}
+  scoreDisplayText: {fileID: 1598806470}
+  winScreenImage: {fileID: 411645234}
 --- !u!1 &411645232
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &638842499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -652,8 +654,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9707efb699a14ad4cae2c9de2d34219b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerUI
-  livesDisplay: {fileID: 2001140053}
-  scoreDisplay: {fileID: 989250206}
+  playerProfile: {fileID: 11400000, guid: e7b7c517b07d67e47af87f5e784eea55, type: 2}
+  livesDisplayText: {fileID: 2001140053}
+  scoreDisplayText: {fileID: 989250206}
+  winScreenImage: {fileID: 632328931}
 --- !u!1 &669222778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,26 +1232,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6985bc428e319354d9c3dbcf1901c56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  playerObject: {fileID: 5922254622709201695, guid: 8c17386d9150ac14d8fb11188d3fa72a, type: 3}
-  winScreens:
-  - {fileID: 411645232}
-  - {fileID: 632328929}
-  playerUI:
-  - {fileID: 324344193}
-  - {fileID: 638842500}
   asteroidPools:
   - {fileID: 825653802}
   - {fileID: 825653801}
   - {fileID: 825653800}
-  projectilePools:
-  - {fileID: 0}
-  - {fileID: 0}
   reSpawnDuration: 2
   positionOffset: 3
   twoPlayerMode: 0
-  playerColors:
-  - {r: 0.7924528, g: 0.16073336, b: 0.16073336, a: 1}
-  - {r: 0.14773929, g: 0.13995194, b: 0.8018868, a: 1}
+  players:
+  - {fileID: 11400000, guid: 9f3377803edf0ca4db18300aabdbc6e5, type: 2}
+  - {fileID: 11400000, guid: e7b7c517b07d67e47af87f5e784eea55, type: 2}
 --- !u!1 &1598806468
 GameObject:
   m_ObjectHideFlags: 0

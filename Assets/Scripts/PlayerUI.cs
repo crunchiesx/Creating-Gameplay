@@ -3,37 +3,89 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private PlayerProfileSO playerProfile;
+
     [Header("UI Elements")]
-    [SerializeField] private Text livesDisplay;
-    [SerializeField] private Text scoreDisplay;
+    [SerializeField] private Text livesDisplayText;
+    [SerializeField] private Text scoreDisplayText;
+    [SerializeField] private Image winScreenImage;
+
+    private void OnEnable()
+    {
+        ActivateUI(false);
+
+        GameManager.OnPlayerCreated += SetUpUI;
+        GameManager.OnPlayerKilled += UpdateLives;
+        GameManager.OnScoreChanged += UpdateScore;
+        GameManager.OnPlayerWin += DisplayWinScreen;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnPlayerCreated -= SetUpUI;
+        GameManager.OnPlayerKilled -= UpdateLives;
+        GameManager.OnScoreChanged -= UpdateScore;
+        GameManager.OnPlayerWin -= DisplayWinScreen;
+    }
+
+    private void SetUpUI(PlayerProfileSO playerProfileSO)
+    {
+        if (playerProfile != playerProfileSO)
+        {
+            return;
+        }
+
+        SetPlayerColor(playerProfileSO.playerColor);
+        ActivateUI(true);
+    }
+
+    private void ActivateUI(bool active)
+    {
+        livesDisplayText.gameObject.SetActive(active);
+        scoreDisplayText.gameObject.SetActive(active);
+    }
 
     public void SetPlayerColor(Color playerColor)
     {
-        livesDisplay.color = playerColor;
-        scoreDisplay.color = playerColor;
+        livesDisplayText.color = playerColor;
+        scoreDisplayText.color = playerColor;
+        winScreenImage.color = playerColor;
     }
 
-    public void UpdateLives(int lives)
+    public void UpdateLives(PlayerProfileSO playerProfileSO, int lives)
     {
-        switch (lives)
+        if (playerProfile != playerProfileSO)
         {
-            case 3:
-                livesDisplay.text = "^ ^ ^";
-                break;
-            case 2:
-                livesDisplay.text = "^ ^";
-                break;
-            case 1:
-                livesDisplay.text = "^";
-                break;
-            default:
-                livesDisplay.text = "";
-                break;
+            return;
         }
+
+        livesDisplayText.text = lives switch
+        {
+            3 => "^ ^ ^",
+            2 => "^ ^",
+            1 => "^",
+            _ => "",
+        };
     }
 
-    public void UpdateScore(int score)
+    public void UpdateScore(PlayerProfileSO playerProfileSO, int score)
     {
-        scoreDisplay.text = string.Format("{0:000000}", score);
+        if (playerProfile != playerProfileSO)
+        {
+            return;
+        }
+
+        scoreDisplayText.text = string.Format("{0:000000}", score);
+    }
+
+    public void DisplayWinScreen(PlayerProfileSO playerProfileSO)
+    {
+        if (playerProfile != playerProfileSO)
+        {
+            return;
+        }
+
+        winScreenImage.gameObject.SetActive(true);
     }
 }

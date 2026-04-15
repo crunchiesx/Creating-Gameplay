@@ -1,20 +1,19 @@
+using System;
 using System.Collections;
-using Unity.VectorGraphics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [Header("References")]
-    [SerializeField] private GameObject playerObject;
+    public static Action<PlayerProfileSO> OnPlayerCreated;
+    public static Action<PlayerProfileSO> OnPlayerWin;
+    public static Action<PlayerProfileSO, int> OnPlayerKilled;
+    public static Action<PlayerProfileSO, int> OnScoreChanged;
 
-    [Space]
-
-    [SerializeField] private GameObject[] winScreens;
-    [SerializeField] private PlayerUI[] playerUI;
 
     [Header("Object Pools")]
     [SerializeField] private ObjectPool[] asteroidPools;
@@ -26,9 +25,8 @@ public class GameManager : MonoBehaviour
     [Header("Game Settings")]
     [SerializeField] private bool twoPlayerMode = true;
 
-    [Space]
-
-    [SerializeField] private Color[] playerColors;
+    [Header("Player Profiles")]
+    [SerializeField] private PlayerProfileSO[] players;
 
     private int[] scores = new int[2];
     private bool gameOver = false;
@@ -51,7 +49,7 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < numPlayers; i++)
         {
-            GameObject player = Instantiate(playerObject);
+            GameObject player = Instantiate(players[i].playerObject);
 
             if (twoPlayerMode)
             {
@@ -63,15 +61,14 @@ public class GameManager : MonoBehaviour
                 player.transform.position = Vector3.zero;
             }
 
-            player.GetComponentInChildren<SpriteRenderer>().color = playerColors[i];
-            playerUI[i].SetPlayerColor(playerColors[i]);
-            playerUI[i].gameObject.SetActive(true);
+            player.GetComponentInChildren<SpriteRenderer>().color = players[i].playerColor;
+            OnPlayerCreated?.Invoke(players[i]);
         }
 
         while (!gameOver)
         {
             SpawnAsteroid();
-            yield return new WaitForSeconds(Random.Range(1f, 5f));
+            yield return new WaitForSeconds(UnityEngine.Random.Range(1f, 5f));
         }
 
         if (twoPlayerMode)
@@ -88,8 +85,7 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            winScreens[winningPlayer].GetComponent<Image>().color = playerColors[winningPlayer];
-            winScreens[winningPlayer].SetActive(true);
+            OnPlayerWin?.Invoke(players[winningPlayer]);
         }
 
         yield return new WaitForSeconds(5f);
@@ -99,14 +95,14 @@ public class GameManager : MonoBehaviour
 
     private void SpawnAsteroid()
     {
-        int poolIndex = Random.Range(0, asteroidPools.Length);
+        int poolIndex = UnityEngine.Random.Range(0, asteroidPools.Length);
         GameObject asteroid = asteroidPools[poolIndex].GetObject();
         asteroid.SetActive(true);
     }
 
     public void ReportPlayerDeath(GameObject player, int playerNumber, int lives)
     {
-        playerUI[playerNumber].UpdateLives(lives);
+        OnPlayerKilled?.Invoke(players[playerNumber], lives);
 
         if (lives > 0)
         {
@@ -136,6 +132,6 @@ public class GameManager : MonoBehaviour
     public void UpdateScore(int pointsToAdd, int playerNumber)
     {
         scores[playerNumber] += pointsToAdd;
-        playerUI[playerNumber].UpdateScore(scores[playerNumber]);
+        OnScoreChanged?.Invoke(players[playerNumber], scores[playerNumber]);
     }
 }
